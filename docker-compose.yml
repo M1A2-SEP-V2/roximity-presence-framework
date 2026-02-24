@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_DB: mydatabase
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    restart: always
+    environment:
+      DATABASE_URL: postgres://user:password@db:5432/mydatabase
+    depends_on:
+      - db
+
+volumes:
+  db_data:
