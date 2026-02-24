@@ -1,0 +1,1 @@
+{\n  "name": "student-app",\n  "version": "1.0.0",\n  "main": "index.js",\n  "dependencies": {\n    "axios": "^0.21.1",\n    "@react-native-async-storage/async-storage": "^1.15.0",\n    "react-native-ble-plx": "^2.0.3"\n  }\n}
